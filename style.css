@@ -14,6 +14,13 @@ body {
 body {
   height: 100vh;
 }
+
+/*General*/
+.box {
+  width: 85%;
+  max-width: 1500px;
+}
+
 /*Navigation*/
 #hamburger img {
   position: absolute;
@@ -28,9 +35,15 @@ body {
   position: relative;
   height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   text-align: center;
+  justify-content: center;
+}
+
+.primary-section .box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
 }
 
@@ -165,8 +178,8 @@ body {
   align-items: center;
   grid-template-areas:
     "title title"
-    "iframe1 iframe1"
-    "iframe2 iframe2";
+    "tutorials-box tutorials-box"
+    "tutorials-box tutorials-box";
 }
 
 .tutorials h2 {
@@ -186,11 +199,15 @@ body {
 }
 
 .iframe1 {
-  grid-area: iframe1;
+  margin-bottom: 3em;
 }
 
-.iframe2 {
-  grid-area: iframe2;
+.tutorials .box {
+  grid-area: tutorials-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .tutorials::before {
@@ -274,13 +291,17 @@ body {
     right: 60px;
   }
 
-  .primary-section {
+  .primary-section .box {
     flex-direction: row;
     justify-content: space-around;
     text-align: start;
   }
 
-  .primary-section div {
+  .primary-section img {
+    margin-right: 5em;
+  }
+
+  .primary-section .text {
     align-items: flex-start;
   }
 
@@ -291,11 +312,20 @@ body {
   .tutorials {
     grid-template-areas:
       "title title"
-      "iframe1 iframe2"
-      "iframe1 iframe2";
+      "tutorials-box tutorials-box"
+      "tutorials-box tutorials-box";
+  }
+
+  .tutorials .box {
+    flex-direction: row;
+    max-width: 1200px;
   }
 
   .tutorials::before {
     display: block;
+  }
+
+  .iframe1 {
+    margin-bottom: 0;
   }
 }
